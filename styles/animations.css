@@ -9,3 +9,29 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+@keyframes bigger {
+    to {
+        scale: 1.25;
+    }
+}
+
+@keyframes sparkle {
+    to {
+        opacity: 100%;
+    }
+}
+
+:default {
+    .main-body {
+        transition: 0.3s linear;
+    }
+
+    .core {
+        transition: 0.3s linear 0.03s;
+    }
+
+    .contour {
+        transition: 0.1s linear;
+    }
+}

@@ -13,4 +13,454 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font);
+  font-variation-settings: var(--main-font-weight);
+  background-image: var(--background-image);
+  background-attachment: fixed;
+  background-size: cover;
+  inline-size: var(--container-inline-size);
+  margin-inline: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  color: #000000;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  inline-size: var(--container-inline-size);
+  font-family: var(--accent-font);
+  font-weight: var(--title-font-weight);
+  padding-block: clamp(122px, 100%, 130px);
+  padding-inline: clamp(16px, 100%, 122.5px);
+  text-align: center;
+  background-color: #ffffff;
+  margin-bottom: 100px;
+  border: 2px solid #000;
+}
+
+.header__title {
+  font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+}
+
+.header__subtitle {
+  margin-top: 20px;
+  font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+}
+
+.card {
+  box-sizing: border-box;
+  border: 2px solid #000000;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+
+.card__title {
+  padding: 5px 10px;
+  font-weight: var(--title-font-weight);
+  font-size: 18px;
+  line-height: 22px;
+}
+
+/*
+.label {
+  display: flex;
+  vertical-align: middle;}
+  /* что это..^ надо расположить в правом верхнем углу поверх изображения */
+
+.card__pic {
+  position: relative;
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  background-color: #ffffff;
+  border-width: 2px 0px;
+  border-style: solid;
+  border-color: #000000;
+}
+
+.card__label {
+  position: absolute;
+  top: 27px;
+  right: 25px;
+  text-transform: uppercase;
+  font-family: var(--accent-font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  mix-blend-mode: hard-light;
+}
+
+@supports ((text-stroke: 2px var(--text-shadow-color)) or (-webkit-text-stroke: 2px var(--text-shadow-color))) {
+  .card__label {
+    -webkit-text-stroke: 2px var(--text-shadow-color);
+    text-stroke: 2px var(--text-shadow-color);
+    text-shadow: none;
+  }
+}
+
+@supports not (text-shadow: 1px var(--text-shadow-color)) {
+  .card__label {
+    border: 2px solid var(--text-shadow-color);
+  }
+}
+
+.card__button {
+  justify-content: end;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin: 25px;
+}
+
+.card__text {
+  font-weight: var(--main-font-weight);
+  font-size: 18px;
+  line-height: 117%;
+  margin: 25px;
+}
+
+.card__text p {
+  margin-bottom: 25px;
+}
+
+.card__icon-button {
+  border: 2px solid transparent;
+  padding: 0px;
+  width: 27px;
+  height: 24px;
+  transition: border 0.3s ease;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.like-icon {
+  margin-top: -7px;
+  transform-origin: center;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: none;
+  border: 2px solid #000;
+}
+
+.card__like-button {
+  margin-left: 10px;
+}
+
+.button {
+  position: relative;
+  font-family: var(--accent-font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 90%;
+  padding: 9px 17px;
+  background: #ffffff;
+  border: 2px solid #000000;
+  transition: box-shadow 0.3s ease;
+}
+
+.button__floppy {
+  display: flex;
+  margin-inline: auto;
+  margin-block: auto;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  background-color: #000;
+  transform-origin: center left;
+}
+
+.button__text {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  z-index: 1;
+  position: relative;
+}
+
+.button:hover .button__text,
+.button:hover .button__text-icon {
+  color: #fff;
+
+  .button {
+    position: relative;
+    font-family: var(--accent-font);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 90%;
+    padding: 9px 17px;
+    background: #ffffff;
+    border: 2px solid #000000;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .button__floppy {
+    display: flex;
+    margin-inline: auto;
+    margin-block: auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .button::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    transform: scaleX(0);
+    background-color: #000;
+    transform-origin: center left;
+  }
+
+  .button__text {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    z-index: 1;
+    position: relative;
+  }
+
+  .button:hover .button__text,
+  .button:hover .button__text-icon {
+    color: #fff;
+    mix-blend-mode: difference;
+  }
+
+  .button:hover::after {
+    transform: scaleX(1);
+  }
+
+  .button:hover,
+  .button:focus {
+    outline: none;
+    box-shadow: 2px 2px #000;
+  }
+
+  .button__text-icon {
+    height: 21px;
+    width: 21px;
+  }
+}
+
+.button:hover::after {
+  transform: scaleX(1);
+}
+
+.button:hover,
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px #000;
+}
+
+.button__text-icon {
+  height: 21px;
+  width: 21px;
+}
+
+.dialog {
+  width: 100%;
+  max-height: 191px;
+  max-width: 353px;
+  padding: 30px;
+  background: #ffffff;
+  border: 2px solid #000000;
+  inset: 0px;
+}
+
+.dialog::backdrop {
+  background: rgb(0 0 0/75%);
+}
+
+.dialog__button {
+  width: 100%;
+  align-items: center;
+}
+
+.dialog__icon {
+  flex-shrink: 0;
+  display: inline-block;
+  width: 39px;
+  height: 39px;
+}
+
+.dialog__text {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  font-family: var(--accent-font);
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.core,
+.main-body {
+  fill: transparent;
+}
+
+.contour {
+  fill: var(--contour-color);
+}
+
+.sparks {
+  opacity: 0%;
+  fill: var(--animation-fill-color);
+}
+
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  transition: 0.3s linear 0.05s;
+}
+
+.like-icon:hover .core {
+  fill: var(--contour-color);
+  transition: 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparkle 0.3s ease-in 0.3s;
+}
+
+.like-icon.is-liked .heart {
+  animation: bigger 0.3s ease-in 0.1s;
+}
+
+.saturation-filter {
+  filter: saturate(90%) hue-rotate(35deg);
+}
+
+.bright-filter {
+  filter: contrast(2) brightness(200%);
+}
+
+.pastel-filter {
+  filter: sepia(0.5) blur(0.05rem);
+}
+
+.invert-filter {
+  filter: invert(70%);
+}
+
+.blur-filter {
+  filter: blur(0.6rem) grayscale(0.9);
+}
+
+.hue-filter {
+  filter: opacity(0.85) hue-rotate(70deg);
+}
+
+.mix-filter {
+  filter: contrast(120%) hue-rotate(130deg) invert(0.9);
+}
+
+@media (width <=375px) {
+  .page {
+    background-color: #fff;
+    background-image: none;
+  }
+
+  .header__subtitle {
+    min-inline-size: 210px;
+  }
+
+  .button__floppy .button__text {
+    display: contents;
+  }
+
+  .button__floppy {
+    display: flex;
+    flex-direction: column;
+    max-width: 306px;
+    min-height: 84px;
+    gap: 10px;
+  }
+
+  .button__text-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .card__like-button {
+    width: 130px;
+  }
+
+  .dialog {
+    max-height: 191px;
+  }
+
+  .dialog__text {
+    max-width: 0px;
+  }
+
+  .dialog__icon {
+    width: 39px;
+    height: 39px;
+  }
 }
